@@ -3,7 +3,8 @@ import pygame
 class Player(pygame.sprite.Sprite):
     def __init__(self,pos,barrier,speed):
         super().__init__()
-        self.image = pygame.image.load('../graphics/player.png').convert_alpha()
+        self.image = pygame.Surface((20,20))
+        self.image.fill('green')
         self.rect = self.image.get_rect(midbottom = pos)
         self.speed = speed
         self.max_x_barrier = barrier
