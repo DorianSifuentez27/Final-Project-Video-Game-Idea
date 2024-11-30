@@ -24,4 +24,4 @@ Figuring out multiple level phases
 
 Outcomes
 
-I might not have the ability to fully recreate Space Invaders. So I might have to simple the game in certain areas.
+I might not have the ability to fully recreate Space Invaders. So I might have to simplify the game in certain areas.
