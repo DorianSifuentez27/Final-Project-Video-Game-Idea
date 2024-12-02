@@ -11,7 +11,7 @@ class Laser(pygame.sprite.Sprite):
     
     def destroy(self):
         if self.rect.y <= -50 or self.rect.y >= self.height_y_constraint + 50:
-           self. kill()
+           self.kill()
 
     def update(self):
         self.rect.y += self.speed
