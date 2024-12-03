@@ -74,6 +74,34 @@ class Game:
         self.aliens.draw(screen)
         self.alien_lasers.update()
         self.alien_lasers.draw(screen)
+        self.collision_checks()
+
+    def collision_checks(self):
+        if self.player.sprite.laser:
+            for laser in self.player.sprite.laser:
+                if pygame.sprite.spritecollide(laser,self.blocks,True):
+                    laser.kill()
+
+                if pygame.sprite.spritecollide(laser,self.aliens,True):
+                    laser.kill()
+            
+        if self.alien_lasers:
+            for laser in self.alien_lasers:
+                if pygame.sprite.spritecollide(laser,self.blocks,True):
+                    laser.kill()
+
+                if pygame.sprite.spritecollide(laser,self.player,False):
+                    laser.kill()
+                    pygame.quit()
+                    sys.exit()
+
+        if self.aliens:
+            for alien in self.aliens:
+                pygame.sprite.spritecollide(alien,self.blocks,True)
+
+                if pygame.sprite.spritecollide(alien,self.player,False):
+                    pygame.quit()
+                    sys.exit()
 
 if __name__ == '__main__':
     pygame.init ()

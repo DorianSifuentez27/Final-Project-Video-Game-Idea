@@ -31,7 +31,7 @@ class Player(pygame.sprite.Sprite):
     def recharge(self):
         if not self.ready:
             current_time = pygame.time.get_ticks()
-            if current_time - self.laser_time >+ self.laser_cooldown:
+            if current_time - self.laser_time >= self.laser_cooldown:
                 self.ready = True
 
     def shoot_laser(self):
